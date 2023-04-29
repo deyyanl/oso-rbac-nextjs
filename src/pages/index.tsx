@@ -6,7 +6,7 @@ async function canRead(user: User): Promise<boolean> {
 		`/api/authorize?userId=${user.name}&action=read&resource=posts`
 	);
 	const { actionAllowed } = await response.json();
-	return !!actionAllowed;
+	return actionAllowed;
 }
 
 const tempUser: User = {
